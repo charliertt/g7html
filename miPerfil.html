@@ -9,34 +9,41 @@
           <form id="registroForm" data-parsley-validate><!-- Inicio de Formulario-->
             <div class="row mb-1">
                   <div class="col-5">
-                      <label for="tipoDoc" class="col-form-label">Tipo de Documento</label>
-                      <input type="text" class="form-control" id="tipoDoc" name="tipoDoc" required
+                    <div>
+                        <label for="tipoDoc" class="col-form-label">Tipo de Documento</label>
+                        <input type="text" class="form-control" id="tipoDoc" name="tipoDoc" required
                                 data-parsley-pattern="^(CC|TI|EX|PAS)$"
                                 data-parsley-error-message="Debe introducir CC TI EX PAS"
                                 data-parsley-trigger="keyup">
+                      </div>
+                    <div class="mb-1">
+                        <label for="nombres" class="col-form-label">Nombres:</label>
+                        <input type="text" class="form-control" id="nombres"  required 
+                                  data-parsley-pattern="^[a-zA-Z]+$" 
+                                  data-parsley-error-message="Solo se permiten letras" 
+                                  data-parsley-trigger="keyup">
+                    </div>
                   </div>
                   <div class="col-7">
-                      <label for="nroDoc" class="col-form-label">Nro. Documento</label>
-                      <input type="text" class="form-control" id="nroDoc"required 
-                            data-parsley-pattern="^[a-zA-Z0-9]+$" 
-                            data-parsley-error-message="Solo se permiten letras y números (sin caracteres especiales)" 
-                            data-parsley-trigger="keyup">
+                      <div>
+                          <label for="nroDoc" class="col-form-label">Nro. Documento</label>
+                          <input type="text" class="form-control" id="nroDoc"required 
+                              data-parsley-pattern="^[a-zA-Z0-9]+$" 
+                              data-parsley-error-message="Solo se permiten letras y números (sin caracteres especiales)" 
+                              data-parsley-trigger="keyup">
+                      </div>
+                      <div class="mb-1">
+                        <label for="apellidos" class="col-form-label">Apellidos:</label>
+                        <input type="text" class="form-control" id="apellidos" required 
+                              data-parsley-pattern="^[a-zA-Z]+$" 
+                              data-parsley-error-message="Solo se permiten letras" 
+                              data-parsley-trigger="keyup">
+                      </div>
                   </div>
+                  
             </div>
-            <div class="mb-1">
-              <label for="nombres" class="col-form-label">Nombres:</label>
-              <input type="text" class="form-control" id="nombres"  required 
-                        data-parsley-pattern="^[a-zA-Z]+$" 
-                        data-parsley-error-message="Solo se permiten letras" 
-                        data-parsley-trigger="keyup">
-            </div>
-            <div class="mb-1">
-              <label for="apellidos" class="col-form-label">Apellidos:</label>
-              <input type="text" class="form-control" id="apellidos" required 
-                    data-parsley-pattern="^[a-zA-Z]+$" 
-                    data-parsley-error-message="Solo se permiten letras" 
-                    data-parsley-trigger="keyup">
-            </div>
+           
+           
             <div class="mb-1">
               <label for="correo" class="col-form-label">Correo:</label>
               <input type="email" class="form-control" id="correo" required 
@@ -44,20 +51,29 @@
                     data-parsley-error-message="Debe ser un correo válido" 
                     data-parsley-trigger="keyup">
             </div>
-            <div class="mb-1">
-              <label for="clave" class="col-form-label">Contraseña:</label>
-              <input type="password" class="form-control" id="clave" required 
-                    data-parsley-pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d{3,})(?=.*[\W_]).{8,}$" 
-                    data-parsley-error-message="Debe contener una longitud de 8: al menos 1 mayúscula, 1 minúscula, 3 números y 1 carácter especial"
-                    data-parsley-trigger="keyup">
+            <div class="row">
+                <div class="col-7">
+                  <div class="mb-1">
+                    <label for="clave" class="col-form-label">Contraseña:</label>
+                    <input type="password" class="form-control" id="clave" required 
+                          data-parsley-pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d{3,})(?=.*[\W_]).{8,}$" 
+                          data-parsley-error-message="Debe contener una longitud de 8: al menos 1 mayúscula, 1 minúscula, 3 números y 1 carácter especial"
+                          data-parsley-trigger="keyup">
+                  </div>
+                  </div>
+                <div class="col-5">
+                  <div class="mb-1">
+                    <label for="claveC" class="col-form-label">Confirmar Contraseña:</label>
+                    <input type="password" class="form-control" id="claveC" required 
+                          data-parsley-equalto="#clave" 
+                          data-parsley-error-message="Las contraseñas no coinciden"
+                          data-parsley-trigger="keyup">
+                  </div>
+                </div>
+                
             </div>
-            <div class="mb-1">
-              <label for="claveC" class="col-form-label">Confirmar Contraseña:</label>
-              <input type="password" class="form-control" id="claveC" required 
-                    data-parsley-equalto="#clave" 
-                    data-parsley-error-message="Las contraseñas no coinciden"
-                    data-parsley-trigger="keyup">
-            </div>
+           
+           
         </form><!-- Fin de Formulario-->
       </div>
       <div class="modal-footer">
