@@ -36,8 +36,7 @@
                     <div class="row mb-3 mt-4">
                         <div class="col-4">
                             <label for="tipoDoc" class="col-form-label">Tipo de Documento:</label>
-                        </div>
-                        <div class="col-8">
+                    
                             <select class="form-select" id="tipoDoc" name="tipoDoc" required>
                                 <option value="" disabled selected>Seleccione</option>
                                 <option value="CC">Cédula de Ciudadanía</option>
@@ -46,18 +45,14 @@
                                 <option value="PAS">Pasaporte</option>
                             </select>
                         </div>
-                    </div>
-                    <hr>
-
-                    <!-- Número Documento -->
-                    <div class="row mb-3">
-                        <div class="col-4">
-                            <label for="numDocumento" class="col-form-label">Número de Documento:</label>
-                        </div>
+                    
+                        <!-- Número Documento -->
+                    
                         <div class="col-8">
+                            <label for="numDocumento" class="col-form-label">Número de Documento:</label>
+                    
                             <input type="text" class="form-control" id="numDocumento" name="numDocumento" required
-                                data-parsley-pattern="^\d+$" 
-                                data-parsley-error-message="Solo se permiten numeros"
+                                data-parsley-pattern="^\d+$" data-parsley-error-message="Solo se permiten numeros"
                                 data-parsley-trigger="keyup">
                         </div>
                     </div>
@@ -67,22 +62,16 @@
                     <div class="row mb-3">
                         <div class="col-4">
                             <label for="nombres" class="col-form-label">Nombres:</label>
-                        </div>
-                        <div class="col-8">
                             <input type="text" class="form-control" id="nombres" name="nombres" required
                                 data-parsley-pattern="^[a-zA-Z]+$" 
                                 data-parsley-error-message="Solo se permiten letras"
                                 data-parsley-trigger="keyup">
+                        
                         </div>
-                    </div>
-                    <hr>
 
                     <!-- Apellidos -->
-                    <div class="row mb-3">
-                        <div class="col-4">
-                            <label for="apellidos" class="col-form-label">Apellidos:</label>
-                        </div>
                         <div class="col-8">
+                            <label for="apellidos" class="col-form-label">Apellidos:</label>
                             <input type="text" class="form-control" id="apellidos" name="apellidos" required
                                 data-parsley-pattern="^[a-zA-Z]+$" 
                                 data-parsley-error-message="Solo se permiten letras"
