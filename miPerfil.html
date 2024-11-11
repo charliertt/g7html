@@ -1,127 +1,138 @@
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title">Editar Perfil</h5>
-            <button type="button" class="btn-close" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <form id="registroForm" data-parsley-validate>
-
-              <div class="row">
-                <div class="col-6 mb-3">
-                    <img src="https://cdni.iconscout.com/illustration/premium/thumb/profile-status-illustration-download-in-svg-png-gif-file-formats--active-online-web-problems-and-solutions-pack-people-illustrations-6359970.png" alt="Foto de perfil" class="rounded-circle" height="100">
-                </div>
-
-                <div class="col-3 mb-3 p-1">
-                <button type="submit" class="btn btn-Light" height="50">Copiar Link</button>
-              </div>
-
-              <div class="col-3 mb-3 p-1">
-                <button type="submit" class="btn btn-Light" height="50">Ver Perfil</button>
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Editar Perfil</h5>
+                <button type="button" class="btn-close" aria-label="Close"></button>
             </div>
-                
-              </div>
-              <strong class="mb-3">
-                <span>
-                  PATO DONALD
-                </span>
-              </strong>
-              <br>
-              <span>Patodonal@gmail.com</span>
-            
-                <!-- Tipo de Documento -->
-                <div class="row mb-3 mt-4">
-                    <div class="col-4">
-                        <label for="tipoDoc" class="col-form-label">Tipo de Documento:</label>
-                    </div>
-                    <div class="col-8">
-                        <select class="form-select" id="tipoDoc" name="tipoDoc" required>
-                            <option value="" disabled selected>Seleccione</option>
-                            <option value="CC">Cédula de Ciudadanía</option>
-                            <option value="TI">Tarjeta de Identidad</option>
-                            <option value="EX">Cédula de Extranjería</option>
-                            <option value="PAS">Pasaporte</option>
-                        </select>
-                    </div>
-                </div>
+            <div class="modal-body">
+                <form id="registroForm" data-parsley-validate>
 
-                <!-- Nombres -->
-                <div class="row mb-3">
-                    <div class="col-4">
-                        <label for="nombres" class="col-form-label">Nombres:</label>
-                    </div>
-                    <div class="col-8">
-                        <input type="text" class="form-control" id="nombres" name="nombres" required 
-                            data-parsley-pattern="^[a-zA-Z]+$" 
-                            data-parsley-error-message="Solo se permiten letras" 
-                            data-parsley-trigger="keyup">
-                    </div>
-                </div>
+                    <div class="row">
+                        <div class="col-6 mb-3">
+                            <img src="https://cdni.iconscout.com/illustration/premium/thumb/profile-status-illustration-download-in-svg-png-gif-file-formats--active-online-web-problems-and-solutions-pack-people-illustrations-6359970.png"
+                                alt="Foto de perfil" class="rounded-circle" height="100">
+                        </div>
 
-                <!-- Apellidos -->
-                <div class="row mb-3">
-                    <div class="col-4">
-                        <label for="apellidos" class="col-form-label">Apellidos:</label>
-                    </div>
-                    <div class="col-8">
-                        <input type="text" class="form-control" id="apellidos" name="apellidos" required 
-                            data-parsley-pattern="^[a-zA-Z]+$" 
-                            data-parsley-error-message="Solo se permiten letras" 
-                            data-parsley-trigger="keyup">
-                    </div>
-                </div>
+                        <div class="col-3 mb-3 p-1">
+                            <button type="submit" class="btn btn-Light" height="50">Copiar Link</button>
+                        </div>
 
-                <!-- Correo Electrónico -->
-                <div class="row mb-3">
-                    <div class="col-4">
-                        <label for="correo" class="col-form-label">Correo:</label>
-                    </div>
-                    <div class="col-8">
-                        <input type="email" class="form-control" id="correo" name="correo" required 
-                            data-parsley-type="email" 
-                            data-parsley-error-message="Debe ser un correo válido" 
-                            data-parsley-trigger="keyup">
-                    </div>
-                </div>
+                        <div class="col-3 mb-3 p-1">
+                            <button type="submit" class="btn btn-Light" height="50">Ver Perfil</button>
+                        </div>
 
-                <!-- Contraseña -->
-                <div class="row mb-3">
-                    <div class="col-4">
-                        <label for="clave" class="col-form-label">Contraseña:</label>
                     </div>
-                    <div class="col-8">
-                        <input type="password" class="form-control" id="clave" name="clave" required 
-                            data-parsley-pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d{3,})(?=.*[\W_]).{8,}$" 
-                            data-parsley-error-message="Debe contener al menos 1 mayúscula, 1 minúscula, 3 números y 1 carácter especial"
-                            data-parsley-trigger="keyup">
-                    </div>
-                </div>
+                    <strong class="mb-3">
+                        <span>
+                            PATO DONALD
+                        </span>
+                    </strong>
+                    <br>
+                    <span>Patodonal@gmail.com</span>
 
-                <!-- Confirmar Contraseña -->
-                <div class="row mb-3">
-                    <div class="col-4">
-                        <label for="claveC" class="col-form-label">Confirmar Contraseña:</label>
+                    <!-- Tipo de Documento -->
+                    <div class="row mb-3 mt-4">
+                        <div class="col-4">
+                            <label for="tipoDoc" class="col-form-label">Tipo de Documento:</label>
+                        </div>
+                        <div class="col-8">
+                            <select class="form-select" id="tipoDoc" name="tipoDoc" required>
+                                <option value="" disabled selected>Seleccione</option>
+                                <option value="CC">Cédula de Ciudadanía</option>
+                                <option value="TI">Tarjeta de Identidad</option>
+                                <option value="EX">Cédula de Extranjería</option>
+                                <option value="PAS">Pasaporte</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="col-8">
-                        <input type="password" class="form-control" id="claveC" name="claveC" required 
-                            data-parsley-equalto="#clave" 
-                            data-parsley-error-message="Las contraseñas no coinciden"
-                            data-parsley-trigger="keyup">
-                    </div>
-                </div>
 
-                <!-- Botones -->
-                <div class="modal-footer">
-                  <div class="d-flex justify-content-between gap-2">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-                    <button type="button" class="btn btn-danger">Eliminar Usuario</button>
-                  </div>
-                </div>
-          
-            </form>
+                    <!-- Número Documento -->
+                    <div class="row mb-3">
+                        <div class="col-4">
+                            <label for="numDocumento" class="col-form-label">Número de Documento:</label>
+                        </div>
+                        <div class="col-8">
+                            <input type="text" class="form-control" id="numDocumento" name="numDocumento" required
+                                data-parsley-pattern="^\d+$" 
+                                data-parsley-error-message="Solo se permiten numeros"
+                                data-parsley-trigger="keyup">
+                        </div>
+                    </div>
+
+                    <!-- Nombres -->
+                    <div class="row mb-3">
+                        <div class="col-4">
+                            <label for="nombres" class="col-form-label">Nombres:</label>
+                        </div>
+                        <div class="col-8">
+                            <input type="text" class="form-control" id="nombres" name="nombres" required
+                                data-parsley-pattern="^[a-zA-Z]+$" 
+                                data-parsley-error-message="Solo se permiten letras"
+                                data-parsley-trigger="keyup">
+                        </div>
+                    </div>
+
+                    <!-- Apellidos -->
+                    <div class="row mb-3">
+                        <div class="col-4">
+                            <label for="apellidos" class="col-form-label">Apellidos:</label>
+                        </div>
+                        <div class="col-8">
+                            <input type="text" class="form-control" id="apellidos" name="apellidos" required
+                                data-parsley-pattern="^[a-zA-Z]+$" 
+                                data-parsley-error-message="Solo se permiten letras"
+                                data-parsley-trigger="keyup">
+                        </div>
+                    </div>
+
+                    <!-- Correo Electrónico -->
+                    <div class="row mb-3">
+                        <div class="col-4">
+                            <label for="correo" class="col-form-label">Correo:</label>
+                        </div>
+                        <div class="col-8">
+                            <input type="email" class="form-control" id="correo" name="correo" required
+                                data-parsley-type="email" data-parsley-error-message="Debe ser un correo válido"
+                                data-parsley-trigger="keyup">
+                        </div>
+                    </div>
+
+                    <!-- Contraseña -->
+                    <div class="row mb-3">
+                        <div class="col-4">
+                            <label for="clave" class="col-form-label">Contraseña:</label>
+                        </div>
+                        <div class="col-8">
+                            <input type="password" class="form-control" id="clave" name="clave" required
+                                data-parsley-pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d{3,})(?=.*[\W_]).{8,}$"
+                                data-parsley-error-message="Debe contener al menos 1 mayúscula, 1 minúscula, 3 números y 1 carácter especial"
+                                data-parsley-trigger="keyup">
+                        </div>
+                    </div>
+
+                    <!-- Confirmar Contraseña -->
+                    <div class="row mb-3">
+                        <div class="col-4">
+                            <label for="claveC" class="col-form-label">Confirmar Contraseña:</label>
+                        </div>
+                        <div class="col-8">
+                            <input type="password" class="form-control" id="claveC" name="claveC" required
+                                data-parsley-equalto="#clave" data-parsley-error-message="Las contraseñas no coinciden"
+                                data-parsley-trigger="keyup">
+                        </div>
+                    </div>
+
+                    <!-- Botones -->
+                    <div class="modal-footer">
+                        <div class="d-flex justify-content-between gap-2">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                            <button type="button" class="btn btn-danger">Eliminar Usuario</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
         </div>
     </div>
-</div
-</div>
