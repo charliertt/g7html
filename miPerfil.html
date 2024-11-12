@@ -3,14 +3,14 @@
       <div class="modal-content">
           <div class="modal-header">
               <h5 class="modal-title">Editar Perfil</h5>
-              <button type="button" class="btn-close" aria-label="Close"></button>
+              <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="modal"></button>
           </div>
           <div class="modal-body">
-              <form id="registroForm" data-parsley-validate>
+              <form id="registroForm" data-parsley-validate enctype="multipart/form-data" action="upload.php">
   
                 <div class="row">
                   <div class="col-6 mb-3">
-                      <img src="https://cdni.iconscout.com/illustration/premium/thumb/profile-status-illustration-download-in-svg-png-gif-file-formats--active-online-web-problems-and-solutions-pack-people-illustrations-6359970.png" alt="Foto de perfil" class="rounded-circle" height="100">
+                    <img id="vistaPrevia" class="rounded-circle" src="" alt="" height="100"/>
                   </div>
   
                   <div class="col-3 mb-3 p-1">
@@ -24,11 +24,13 @@
                 </div>
                 <strong class="mb-3">
                   <span>
-                    PATO DONALD
+                    <div id="textoMostrado"></div>
+                    <div id="textoMostrado1"></div>
                   </span>
                 </strong>
-                <br>
-                <span>Patodonal@gmail.com</span>
+                <span>
+                    <div id="textoMostrado2"></div>
+                </span>
               
                   <!-- Tipo de Documento -->
                   <div class="row mb-3 mt-4">
@@ -65,14 +67,16 @@
                           <input type="text" class="form-control" id="nombres" name="nombres" required 
                               data-parsley-pattern="^[a-zA-Z]+$" 
                               data-parsley-error-message="Solo se permiten letras" 
-                              data-parsley-trigger="keyup">
+                              data-parsley-trigger="keyup"
+                              oninput="mostrarTexto()">
                       </div>
 
                       <div class="col-5">
-                        <input type="text" class="form-control" id="nombres" name="nombres" required 
+                        <input type="text" class="form-control" id="nombres1" name="nombres" required 
                             data-parsley-pattern="^[a-zA-Z]+$" 
                             data-parsley-error-message="Solo se permiten letras" 
-                            data-parsley-trigger="keyup">
+                            data-parsley-trigger="keyup"
+                            oninput="mostrarTexto()">
                     </div>
                   </div>
   
@@ -88,7 +92,8 @@
                           <input type="email" class="form-control" id="correo" name="correo" required 
                               data-parsley-type="email" 
                               data-parsley-error-message="Debe ser un correo válido" 
-                              data-parsley-trigger="keyup">
+                              data-parsley-trigger="keyup" 
+                              oninput="mostrarTexto()">
                       </div>
                   </div>
 
@@ -104,16 +109,27 @@
                     </div>
                 </div>
   
-                  <!-- Foto de Perfil -->
-                  <div class="row mb-3">
-                      <div class="col-4">
-                          <label for="fotoPerfil" class="col-form-label">Foto de Perfil:</label>
-                      </div>
-                      <div class="col-8 d-flex align-items-center">
-                          <img src="https://cdni.iconscout.com/illustration/premium/thumb/profile-status-illustration-download-in-svg-png-gif-file-formats--active-online-web-problems-and-solutions-pack-people-illustrations-6359970.png" alt="Foto de perfil" class="rounded-circle" height="70">
-                          <button type="button" class="btn btn-light ms-3">Click para reemplazar imagen</button>
-                      </div>
-                  </div>
+                <!-- Foto de Perfil -->
+                <div class="row mb-3">
+                    <div class="col-4">
+                        <label for="fotoPerfil" class="col-form-label">Foto de Perfil:</label>
+                    </div>
+                    <div class="col-8 d-flex align-items-center">
+                        <!-- Input para seleccionar la foto -->
+                        <input type="file" id="foto" name="foto" class="input-file btn-light ms-3" accept="image/*" onchange="mostrarVistaPrevia(event)">
+                        
+                        <!-- Botón para reemplazar imagen -->
+                        <button type="button" class="btn btn-light ms-3" onclick="document.getElementById('foto').click();">Click para reemplazar imagen</button>
+                    </div>
+                </div>
+
+                <!-- Div para mostrar la vista previa de la imagen de abajo-->
+                <div class="row mb-3">
+                    <div class="col-8 d-flex align-items-center">
+                        <img id="vistaPrevia2" class="rounded-circle" src="" alt="" height="100"/>
+                    </div>
+                </div>
+                
   
                   <!-- Confirmar Contraseña -->
                   
