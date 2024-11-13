@@ -1,25 +1,25 @@
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered ">
+    <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
-          <div class="modal-header bg-light">
+          <div class="modal-header">
               <h5 class="modal-title">Editar Perfil</h5>
               <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="modal"></button>
           </div>
           <div class="modal-body">
-              <form id="registroForm" data-parsley-validate enctype="multipart/form-data">
+              <form id="registroForm" data-parsley-validate enctype="multipart/form-data" action="upload.php">
   
                 <div class="row">
-                    <div class="col-6 mb-1">
-                      <img id="vistaPrevia" class="rounded-circle" src="img/picture.jpg" alt="" height="100" width="100"/>
-                    </div>
-    
-                    <div class="col-3 mb-3 p-1">
-                    <button type="button" class="btn btn-light p-1" height="50"> <i class="fa-solid fa-link"></i> Copiar Link</button>
+                  <div class="col-6 mb-3">
+                    <img id="vistaPrevia" class="rounded-circle" src="" alt="" height="100"/>
                   </div>
-    
+  
                   <div class="col-3 mb-3 p-1">
-                    <button type="button" class="btn btn-light p-1" height="50">Ver Perfil</button>
+                  <button type="submit" class="btn btn-Light" height="50">Copiar Link</button>
                 </div>
+  
+                <div class="col-3 mb-3 p-1">
+                  <button type="submit" class="btn btn-Light" height="50">Ver Perfil</button>
+              </div>
                   
                 </div>
                 <strong class="mb-3">
@@ -38,7 +38,7 @@
                           <label for="tipoDoc" class="col-form-label">Documento:</label>
                       </div>
 
-                      <div class="col-5">
+                      <div class="col-4">
                         <select class="form-select" id="tipoDoc" name="tipoDoc" required>
                             <option value="" disabled selected>Seleccione</option>
                             <option value="CC">Cédula de Ciudadanía</option>
@@ -48,8 +48,8 @@
                         </select>
                         </div>
 
-                      <div class="col-4">
-                          <input type="number" class="form-control" id="numeroId" placeholder="N°" name="numeroId" required 
+                      <div class="col-5">
+                          <input type="number" class="form-control" id="numeroId" placeholder="N° Identificación" name="numeroId" required 
                               data-parsley-type="number" 
                               data-parsley-error-message="Debe ser un número de identificación válido" 
                               data-parsley-trigger="keyup">
@@ -63,7 +63,7 @@
                           <label for="nombres" class="col-form-label">Nombres:</label>
                       </div>
 
-                      <div class="col-5">
+                      <div class="col-4">
                           <input type="text" class="form-control" id="nombres" name="nombres" required 
                               data-parsley-pattern="^[a-zA-Z]+$" 
                               data-parsley-error-message="Solo se permiten letras" 
@@ -71,7 +71,7 @@
                               oninput="mostrarTexto()"> <!-- Para cuando escriben -->
                       </div>
 
-                      <div class="col-4">
+                      <div class="col-5">
                         <input type="text" class="form-control" id="nombres1" name="nombres" required 
                             data-parsley-pattern="^[a-zA-Z]+$" 
                             data-parsley-error-message="Solo se permiten letras" 
@@ -85,41 +85,27 @@
   
                   <!-- Correo Electrónico -->
                   <div class="row mb-3">
-                    <div class="col-3">
-                        <label for="correo" class="col-form-label">Correo:</label>
-                    </div>
-                    <div class="col-9">
-                      
-                      <div class="input-group">
-                          <span class="input-group-text">
-                            <i class="fa-regular fa-envelope"></i>
-                          </span>
+                      <div class="col-3">
+                          <label for="correo" class="col-form-label">Correo:</label>
+                      </div>
+                      <div class="col-9">
                           <input type="email" class="form-control" id="correo" name="correo" required 
-                                 data-parsley-type="email" 
-                                 data-parsley-error-message="Debe ser un correo válido" 
-                                 data-parsley-trigger="keyup" 
-                                 oninput="mostrarTexto()" 
-                                 placeholder="Correo electrónico" >
-                        </div>
+                              data-parsley-type="email" 
+                              data-parsley-error-message="Debe ser un correo válido" 
+                              data-parsley-trigger="keyup" 
+                              oninput="mostrarTexto()">
+                      </div>
+                  </div>
 
-                           
-                    </div>
-                </div>
-
-                <div class="row mb-3">
+                  <div class="row mb-3">
                     <div class="col-3">
                         <label for="correo" class="col-form-label">Usuario:</label>
                     </div>
                     <div class="col-9">
-                        <div class="input-group">
-                            <span class="input-group-text">
-                               untildeium.com/
-                            </span>
-                            <input type="text" class="form-control" id="usuario" name="usuario" required 
-                                data-parsley-pattern="^[a-zA-Z0-9_-]{3,16}$" 
-                                data-parsley-error-message="Debe ser un usuario válido (entre 3 y 16 caracteres, solo se permiten letras, números, guiones bajos y guiones)" 
-                                data-parsley-trigger="keyup">
-                        </div>
+                        <input type="text" class="form-control" id="correo" name="correo" required 
+                            data-parsley-type="email" 
+                            data-parsley-error-message="Debe ser un correo válido" 
+                            data-parsley-trigger="keyup">
                     </div>
                 </div>
   
@@ -128,12 +114,19 @@
                     <div class="col-4">
                         <label for="fotoPerfil" class="col-form-label">Foto de Perfil:</label>
                     </div>
-                  
+                    <div class="col-8 d-flex align-items-center">
+                        <!-- Input para seleccionar la foto -->
+                        <input type="file" id="foto" name="foto" class="input-file btn-light ms-3" accept="image/*" onchange="mostrarVistaPrevia(event)">
+                        
+                        <!-- Botón para reemplazar imagen -->
+                        <button type="button" class="btn btn-light ms-3" onclick="document.getElementById('foto').click();">Click para reemplazar imagen</button>
+                    </div>
+                </div>
 
-                    <div class="col-4 d-flex align-items-center">
-                        <img id="vistaPrevia2" class="rounded-circle me-2" src="img/picture.jpg" alt="" height="50" width="50"/>
-                        <input type="file" id="foto" name="foto" class="input-file btn-light" accept="image/*" onchange="mostrarVistaPrevia(event)" style="display: none;">
-                        <button type="button" class="btn btn-light p-1" onclick="document.getElementById('foto').click();">Click para reemplazar</button>
+                <!-- Div para mostrar la vista previa de la imagen de abajo-->
+                <div class="row mb-3">
+                    <div class="col-8 d-flex align-items-center">
+                        <img id="vistaPrevia2" class="rounded-circle" src="" alt="" height="100"/>
                     </div>
                 </div>
                 
@@ -142,20 +135,11 @@
                   
   
                   <!-- Botones -->
-                  <div class="modal-footer d-flex justify-content-between">
-                    <div class="align-self-start">
-                        <button type="button" class="btn btn-light">Cancelar</button>
-                     
-                    </div>
-                    <div class="align-self-end">
-                      
-
-                      <button type="button" class="btn btn-danger" data-bs-dismiss="modal"> <i class="fa-solid fa-trash"></i> Borrar Usuario</button>
-                      <button type="submit" class="btn btn-dark">Guardar Cambios</button>
-                      
-                
-                      
-                      
+                  <div class="modal-footer">
+                    <div class="d-flex justify-content-between gap-2">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                      <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                      <button type="button" class="btn btn-danger">Eliminar Usuario</button>
                     </div>
                   </div>
             
