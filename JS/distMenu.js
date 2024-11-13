@@ -14,12 +14,13 @@ function fmenu(page) {
                 });
 
                 // Seleccionar el modal llamandolo por su Id
-                var modal = new bootstrap.Modal(document.getElementById('exampleModal'));
+                var modal = new bootstrap.Modal(document.getElementById('exampleModal'),{ backdrop: 'static', keyboard: false });
                 modal.show(); // Muestra el modal
 
         }).catch(error => console.log('Error al cargar la página', error));
 }
 
+//Funcion para mostrar la imagen
 function mostrarVistaPrevia(event) {
     const archivo = event.target.files[0]; // Obtener el archivo seleccionado
     const vistaPrevia = document.getElementById("vistaPrevia"); // Elemento para mostrar la imagen
@@ -43,6 +44,7 @@ if (archivo) {
 }
 }
 
+//funcion para mostrar el texto
 function mostrarTexto() {
     // Obtener el valor del input
     const texto = document.getElementById('nombres').value;
