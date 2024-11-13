@@ -7,6 +7,23 @@
     font-family: myFirstFont;
   }
 
+.input-file {
+    display: none;
+}
+
+#vistaPrevia, #vistaPrevia2 {
+  object-fit: cover; /* Asegura que la imagen se ajuste al contenedor sin distorsionarse */
+}
+
+/* Estilos para mostrar el texto en el div con id "textoMostrado" */
+#textoMostrado, #textoMostrado1  {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  display: inline-block; /* Hacer que los divs se muestren en línea */
+  margin-right: 1px;
+}
 
   main {
     height: 430px;
