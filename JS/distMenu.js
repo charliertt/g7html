@@ -14,8 +14,9 @@ function fmenu(page) {
                 });
 
                 // Seleccionar el modal llamandolo por su Id
-                var modal = new bootstrap.Modal(document.getElementById('exampleModal'));
-                modal.show(); // Muestra el modal
+               
+                var modal = new bootstrap.Modal(document.getElementById('exampleModal'), { backdrop: 'static', keyboard: false });
+                modal.show(); 
 
         }).catch(error => console.log('Error al cargar la página', error));
 
